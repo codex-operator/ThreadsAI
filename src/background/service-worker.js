@@ -55,10 +55,7 @@ class ThreadsAIServiceWorker {
           return;
         }
         case 'decrement_free_parsing': {
-          const result = await this.decrementFreeParsing({
-            tg_id: message?.tg_id,
-            extension_key: message?.extension_key
-          });
+          const result = await this.decrementFreeParsing();
           sendResponse(result);
           return;
         }

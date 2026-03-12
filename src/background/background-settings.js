@@ -1,5 +1,5 @@
 import { DEFAULT_SETTINGS } from '../config.js';
-import { API_URLS, STORAGE_KEYS } from '../shared/api-config.js';
+import { API_URLS } from '../shared/api-config.js';
 
 export function attachSettings(TargetClass) {
   class SettingsExtension {
@@ -9,16 +9,11 @@ export function attachSettings(TargetClass) {
     }
 
     async getInlineAISettings() {
-      const [syncData, localData] = await Promise.all([
-        chrome.storage.sync.get(DEFAULT_SETTINGS),
-        chrome.storage.local.get([STORAGE_KEYS.AUTH, STORAGE_KEYS.EXTENSION_KEY])
-      ]);
+      const syncData = await chrome.storage.sync.get(DEFAULT_SETTINGS);
 
       return {
         proxyUrl: API_URLS.OPENAI_PROXY,
-        tgId: localData[STORAGE_KEYS.AUTH]?.tg_id ?? null,
-        extensionKey: localData[STORAGE_KEYS.EXTENSION_KEY] ?? null,
-        plan: localData[STORAGE_KEYS.AUTH]?.plan ?? 'free',
+        plan: 'local',
         gptModel: syncData.gptModel ?? DEFAULT_SETTINGS.gptModel,
         instructions: null
       };
