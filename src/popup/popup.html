@@ -1,0 +1,394 @@
+<!DOCTYPE html>
+<html lang="ru">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0, maximum-scale=1.0, user-scalable=no">
+    <title>ThreadsAI</title>
+    <link rel="stylesheet" href="popup.css">
+    <style>*{-webkit-user-select:none;user-select:none}input,textarea{-webkit-user-select:text;user-select:text}</style>
+</head>
+
+<body>
+    <!-- Auth Screen (показывается до авторизации) -->
+    <div id="auth-screen" class="auth-screen">
+        <div class="auth-container">
+            <!-- Logo -->
+            <div class="auth-logo">
+                <div class="auth-logo-icon">
+                    <svg width="48" height="48" viewBox="0 0 24 24" fill="none" stroke="currentColor"
+                        stroke-width="1.5">
+                        <path
+                            d="M21 11.5a8.38 8.38 0 0 1-.9 3.8 8.5 8.5 0 0 1-7.6 4.7 8.38 8.38 0 0 1-3.8-.9L3 21l1.9-5.7a8.38 8.38 0 0 1-.9-3.8 8.5 8.5 0 0 1 4.7-7.6 8.38 8.38 0 0 1 3.8-.9h.5a8.48 8.48 0 0 1 8 8v.5z">
+                        </path>
+                    </svg>
+                </div>
+                <h1 class="auth-title">ThreadsAI</h1>
+            </div>
+
+            <!-- Auth Form -->
+            <div class="auth-form">
+                <div class="auth-input-group">
+                    <label class="auth-label">Telegram ID</label>
+                    <input type="text" id="auth-tg-id" class="auth-input" placeholder="Введите ваш Telegram ID"
+                        autocomplete="off" inputmode="numeric">
+                    <p class="auth-hint">Узнать ID можно у <a href="https://t.me/ThreadsAIbot"
+                            target="_blank">@ThreadsAIbot</a></p>
+                </div>
+
+                <button id="auth-submit-btn" class="auth-btn">
+                    <span class="auth-btn-text">Войти</span>
+                    <span class="auth-btn-loader" style="display: none;">
+                        <svg width="20" height="20" viewBox="0 0 24 24" fill="none" stroke="currentColor"
+                            stroke-width="2">
+                            <path
+                                d="M12 2v4m0 12v4M4.93 4.93l2.83 2.83m8.48 8.48l2.83 2.83M2 12h4m12 0h4M4.93 19.07l2.83-2.83m8.48-8.48l2.83-2.83" />
+                        </svg>
+                    </span>
+                </button>
+
+                <div id="auth-error" class="auth-error" style="display: none;">
+                    <span class="auth-error-text"></span>
+                </div>
+            </div>
+
+            <!-- PRO Button (отдельно внизу) -->
+            <a href="https://t.me/ThreadsAIbot" target="_blank" id="auth-pro-btn" class="auth-pro-btn-large" style="display: none;">
+                <svg width="18" height="18" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2">
+                    <path d="M6 3h12l4 6-10 13L2 9l4-6z"/>
+                    <path d="M11 3l1 6h6"/>
+                    <path d="M13 3l-1 6H6"/>
+                </svg>
+                Оформить PRO
+            </a>
+
+            <!-- Not Registered Message -->
+            <div id="auth-not-registered" class="auth-not-registered" style="display: none;">
+                <div class="auth-bot-message">
+                    <svg width="24" height="24" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2">
+                        <circle cx="12" cy="12" r="10"></circle>
+                        <line x1="12" y1="8" x2="12" y2="12"></line>
+                        <line x1="12" y1="16" x2="12.01" y2="16"></line>
+                    </svg>
+                    <p>Вы не зарегистрированы</p>
+                </div>
+                <p class="auth-bot-hint">Для начала работы зарегистрируйтесь в нашем Telegram боте</p>
+                <a href="https://t.me/ThreadsAIbot" target="_blank" class="auth-bot-btn">
+                    <svg width="20" height="20" viewBox="0 0 24 24" fill="currentColor">
+                        <path
+                            d="M12 2C6.48 2 2 6.48 2 12s4.48 10 10 10 10-4.48 10-10S17.52 2 12 2zm4.64 6.8c-.15 1.58-.8 5.42-1.13 7.19-.14.75-.42 1-.68 1.03-.58.05-1.02-.38-1.58-.75-.88-.58-1.38-.94-2.23-1.5-.99-.65-.35-1.01.22-1.59.15-.15 2.71-2.48 2.76-2.69a.2.2 0 00-.05-.18c-.06-.05-.14-.03-.21-.02-.09.02-1.49.95-4.22 2.79-.4.27-.76.41-1.08.4-.36-.01-1.04-.2-1.55-.37-.63-.2-1.12-.31-1.08-.66.02-.18.27-.36.74-.55 2.92-1.27 4.86-2.11 5.83-2.51 2.78-1.16 3.35-1.36 3.73-1.36.08 0 .27.02.39.12.1.08.13.19.14.27-.01.06.01.24 0 .38z" />
+                    </svg>
+                    Открыть @ThreadsAIbot
+                </a>
+                <button id="auth-retry-btn" class="auth-retry-btn">Попробовать снова</button>
+            </div>
+
+        </div>
+    </div>
+
+    <!-- Main Container (показывается после авторизации) -->
+    <div id="main-container" class="main-container" style="display: none;">
+        <!-- Header с информацией о пользователе -->
+        <div class="header">
+            <div class="user-header">
+                <div class="user-details">
+                    <span class="user-name" id="user-name">Пользователь</span>
+                    <div class="user-plan-row">
+                        <span class="user-plan-badge" id="user-plan-badge">FREE</span>
+                        <span class="user-plan-info" id="user-plan-info">0 комментариев</span>
+                    </div>
+                </div>
+            </div>
+            <div class="header-actions">
+                <div class="header-buttons">
+                    <button id="btn-open-prompts" class="btn-icon" title="Управление промтами">
+                        <svg width="19" height="19" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.8" aria-hidden="true">
+                            <path d="M21 15a2 2 0 0 1-2 2H7l-4 4V5a2 2 0 0 1 2-2h14a2 2 0 0 1 2 2z"></path>
+                        </svg>
+                    </button>
+                    <button id="btn-settings" class="btn-icon" title="Настройки">
+                        <svg width="19" height="19" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.8" aria-hidden="true">
+                            <line x1="4" y1="6" x2="14" y2="6"></line>
+                            <line x1="4" y1="12" x2="10" y2="12"></line>
+                            <line x1="4" y1="18" x2="16" y2="18"></line>
+                            <circle cx="17" cy="6" r="2"></circle>
+                            <circle cx="13" cy="12" r="2"></circle>
+                            <circle cx="19" cy="18" r="2"></circle>
+                        </svg>
+                    </button>
+                    <button id="btn-inline-mode" class="btn-icon" title="Быстрая генерация">
+                        <svg width="19" height="19" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.9" aria-hidden="true">
+                            <path d="m12 4 1.8 4.2L18 10l-4.2 1.8L12 16l-1.8-4.2L6 10l4.2-1.8L12 4Z"></path>
+                            <path d="m18 14 .9 2.1L21 17l-2.1.9L18 20l-.9-2.1L15 17l2.1-.9L18 14Z"></path>
+                        </svg>
+                    </button>
+                    <button id="btn-parser-mode" class="btn-icon" title="Парсинг ленты">
+                        <svg width="19" height="19" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.8" aria-hidden="true">
+                            <rect x="3" y="4" width="18" height="16" rx="2"></rect>
+                            <line x1="3" y1="10" x2="21" y2="10"></line>
+                            <line x1="8" y1="20" x2="8" y2="10"></line>
+                            <line x1="16" y1="20" x2="16" y2="10"></line>
+                        </svg>
+                    </button>
+                    <button id="btn-logout" class="btn-icon btn-logout-icon" title="Выйти">
+                        <svg width="19" height="19" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.8" aria-hidden="true">
+                            <path d="M9 21H5a2 2 0 0 1-2-2V5a2 2 0 0 1 2-2h4"></path>
+                            <polyline points="16 17 21 12 16 7"></polyline>
+                            <line x1="21" y1="12" x2="9" y2="12"></line>
+                        </svg>
+                    </button>
+                </div>
+                <a href="https://t.me/ThreadsAIbot" target="_blank" id="btn-upgrade-pro" class="btn-upgrade-pro" style="display: none;">
+                    <svg class="btn-upgrade-pro-icon" width="13" height="13" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2.2" stroke-linecap="round" stroke-linejoin="round">
+                        <polygon points="12 2 15.09 8.26 22 9.27 17 14.14 18.18 21.02 12 17.77 5.82 21.02 7 14.14 2 9.27 8.91 8.26 12 2"></polygon>
+                    </svg>
+                    <span class="btn-upgrade-pro-text">Полная версия</span>
+                </a>
+            </div>
+        </div>
+
+        <!-- Dashboard -->
+        <div class="dashboard">
+            <!-- Status Section (компактный) -->
+            <div class="status-section">
+                <div class="status-row">
+                    <div class="status-indicator">
+                        <div class="status-dot" id="status-dot"></div>
+                        <span class="status-text" id="status-text">Готов</span>
+                    </div>
+                    <span class="status-action" id="status-action"></span>
+                </div>
+
+                <!-- Счетчики - минималистичный стиль -->
+                <div class="stats-row" id="stats-row">
+                    <div class="stat-inline" id="stat-comments">
+                        <span class="stat-label">Комментариев</span>
+                        <span class="stat-value" id="comment-counter">0</span>
+                    </div>
+                    <div class="stat-inline" id="stat-processed">
+                        <span class="stat-label">Обработано</span>
+                        <span class="stat-value" id="processed-counter">0</span>
+                    </div>
+                </div>
+
+                <div class="progress-container" id="progress-container">
+                    <div class="progress-bar">
+                        <div class="progress-fill" id="progress-fill"></div>
+                    </div>
+                    <span class="progress-text" id="progress-text">0 / 10</span>
+                </div>
+            </div>
+        </div>
+
+        <!-- Logs Section -->
+        <div class="logs-section">
+            <div class="section-header">
+                <div class="log-tabs">
+                    <button class="log-tab active" data-tab="log">Лог</button>
+                    <button class="log-tab" data-tab="posts">Посты</button>
+                    <button class="log-tab" data-tab="tech">Тех</button>
+                </div>
+                <div class="section-actions">
+                    <button id="btn-copy-log" class="btn-icon btn-small" title="Копировать">
+                        <svg width="15" height="15" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.8" aria-hidden="true">
+                            <rect x="9" y="9" width="13" height="13" rx="2"></rect>
+                            <path d="M5 15H4a2 2 0 0 1-2-2V4a2 2 0 0 1 2-2h9a2 2 0 0 1 2 2v1"></path>
+                        </svg>
+                    </button>
+                    <button id="btn-clear-log" class="btn-icon btn-small" title="Очистить">
+                        <svg width="15" height="15" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.8" aria-hidden="true">
+                            <polyline points="3 6 5 6 21 6"></polyline>
+                            <path d="M19 6l-1 14a2 2 0 0 1-2 2H8a2 2 0 0 1-2-2L5 6"></path>
+                            <path d="M10 11v6"></path>
+                            <path d="M14 11v6"></path>
+                            <path d="M9 6V4a1 1 0 0 1 1-1h4a1 1 0 0 1 1 1v2"></path>
+                        </svg>
+                    </button>
+                </div>
+            </div>
+            <div class="log-container" id="logs-container">
+                <div id="activity-log" class="activity-log"></div>
+                <div id="posts-log" class="activity-log posts-view" style="display: none;"></div>
+                <div id="tech-log" class="activity-log" style="display: none;"></div>
+            </div>
+        </div>
+
+        <!-- Controls -->
+        <div class="controls">
+            <div class="controls-row">
+                <button id="action-button" class="btn btn-primary">Начать</button>
+            </div>
+        </div>
+    </div>
+
+    <!-- Settings Modal (Sheet) -->
+    <div id="settings-modal" class="modal">
+        <div class="modal-content">
+            <div class="modal-header">
+                <h2 class="modal-title">Настройки</h2>
+                <button class="btn-icon btn-close" id="close-settings">✕</button>
+            </div>
+
+            <div class="form-section">
+                <!-- AI Settings -->
+                <div class="form-group">
+                    <label class="form-label">Модель GPT</label>
+                    <select id="gpt-model" class="form-select">
+                        <option value="gpt-4o-mini" selected>GPT-4o Mini (быстрый)</option>
+                        <option value="gpt-4.1-mini">GPT-4.1 Mini</option>
+                        <option value="gpt-4.1-nano">GPT-4.1 Nano</option>
+                        <option value="gpt-5.0-mini">GPT-5.0 Mini</option>
+                        <option value="gpt-5.1">GPT-5.1</option>
+                        <option value="gpt-5.2">GPT-5.2 (новейшая)</option>
+                    </select>
+                </div>
+
+                <!-- Limits -->
+                <div class="form-group">
+                    <label class="form-label">Лимит комментариев</label>
+                    <input type="number" id="max-comments" class="form-input" value="10" min="1" max="5000" />
+                </div>
+
+                <div class="form-group">
+                    <label class="form-label">Задержка между комментами (сек)</label>
+                    <div class="form-range-row">
+                        <input type="number" id="delay-min" class="form-input" value="30" min="5" max="300" placeholder="от" />
+                        <span class="form-range-separator">—</span>
+                        <input type="number" id="delay-max" class="form-input" value="60" min="5" max="300" placeholder="до" />
+                    </div>
+                </div>
+
+                <div class="form-group">
+                    <div class="checkbox-group" id="skip-replied-group">
+                        <div class="checkbox checked" id="skip-replied-checkbox"></div>
+                        <label class="checkbox-label">Пропускать отвеченные</label>
+                    </div>
+                </div>
+            </div>
+        </div>
+    </div>
+
+    <!-- Prompts Modal -->
+    <div id="prompts-modal" class="modal">
+        <div class="modal-content">
+            <div class="modal-header">
+                <h2 class="modal-title">Управление промтами</h2>
+                <button class="btn-icon btn-close" id="btn-close-prompts">✕</button>
+            </div>
+
+            <div class="form-section prompts-form">
+                <!-- Выбор и управление -->
+                <div class="form-group">
+                    <div class="prompt-header-row">
+                        <label class="form-label">Выберите промт</label>
+                        <div class="prompt-actions">
+                            <button id="btn-edit-prompt" class="btn-icon btn-small btn-edit" title="Редактировать">
+                                <svg width="14" height="14" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2">
+                                    <path d="M11 4H4a2 2 0 0 0-2 2v14a2 2 0 0 0 2 2h14a2 2 0 0 0 2-2v-7"></path>
+                                    <path d="M18.5 2.5a2.121 2.121 0 0 1 3 3L12 15l-4 1 1-4 9.5-9.5z"></path>
+                                </svg>
+                            </button>
+                            <button id="btn-delete-prompt" class="btn-icon btn-small btn-danger" title="Удалить">
+                                <svg width="14" height="14" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2">
+                                    <polyline points="3 6 5 6 21 6"></polyline>
+                                    <path d="M19 6v14a2 2 0 0 1-2 2H7a2 2 0 0 1-2-2V6m3 0V4a2 2 0 0 1 2-2h4a2 2 0 0 1 2 2v2"></path>
+                                </svg>
+                            </button>
+                            <button id="btn-add-prompt" class="btn-icon btn-small btn-primary-icon" title="Создать">
+                                <svg width="14" height="14" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="3">
+                                    <line x1="12" y1="5" x2="12" y2="19"></line>
+                                    <line x1="5" y1="12" x2="19" y2="12"></line>
+                                </svg>
+                                <span>Создать</span>
+                            </button>
+                        </div>
+                    </div>
+                    <select id="prompt-select" class="form-select"></select>
+                </div>
+
+                <!-- Поле названия -->
+                <div class="form-group" id="prompt-name-group">
+                    <label class="form-label">Название промта</label>
+                    <input type="text" id="prompt-name-input" class="form-input"
+                        placeholder="Например: Агрессивный маркетинг" maxlength="80">
+                </div>
+
+                <!-- Текст промта -->
+                <div class="form-group prompt-text-group">
+                    <label class="form-label">Текст инструкции</label>
+                    <textarea id="prompt-text-area" class="form-textarea"
+                        placeholder="Введите инструкцию для GPT..." maxlength="20000"></textarea>
+                </div>
+
+                <!-- Кнопка сохранения -->
+                <button id="btn-save-prompt" class="btn btn-save">Сохранить</button>
+            </div>
+        </div>
+    </div>
+
+    <!-- Parser Modal (fullscreen) -->
+    <div id="parser-modal" class="modal modal-fullscreen">
+        <div class="modal-content modal-content-fullscreen">
+            <div class="modal-header">
+                <h2 class="modal-title">Парсинг ленты</h2>
+                <button class="btn-icon btn-close" id="btn-close-parser">✕</button>
+            </div>
+
+            <div class="form-section parser-form">
+                <div class="parser-description">
+                    <p>Парсинг собирает посты со страницы Threads и сохраняет их автоматически.</p>
+                </div>
+
+                <div class="form-group">
+                    <label class="form-label">Максимум постов</label>
+                    <input type="number" id="parser-max-posts" class="form-input" value="100" min="10" max="2000">
+                    <div id="parser-free-hint" class="parser-hint" style="display: none;">На FREE максимум 50 постов.</div>
+                </div>
+
+                <!-- Статус парсинга -->
+                <div id="parser-status" class="parser-status" style="display: none;">
+                    <div class="parser-progress">
+                        <div class="parser-progress-bar">
+                            <div class="parser-progress-fill" id="parser-progress-fill"></div>
+                        </div>
+                        <span class="parser-progress-text" id="parser-progress-text">0 / 100</span>
+                    </div>
+                    <div id="parser-log" class="parser-log"></div>
+                </div>
+
+                <!-- Кнопки управления -->
+                <div class="parser-controls">
+                    <button id="btn-start-parser" class="btn btn-primary">Запустить</button>
+                    <button id="btn-stop-parser" class="btn btn-primary stopping" style="display: none;">Остановить</button>
+                </div>
+
+                <!-- Кнопка открыть таблицу -->
+                <div class="parser-footer">
+                    <button id="btn-open-table" class="btn btn-table btn-full">
+                        <svg width="16" height="16" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2">
+                            <rect x="3" y="3" width="18" height="18" rx="2" ry="2"/>
+                            <line x1="3" y1="9" x2="21" y2="9"/>
+                            <line x1="9" y1="21" x2="9" y2="9"/>
+                        </svg>
+                        Открыть таблицу
+                    </button>
+                </div>
+            </div>
+        </div>
+    </div>
+
+    <!-- Loading Screen (показывается при инициализации) -->
+    <div id="loading-screen" class="loading-screen">
+        <div class="loading-spinner"></div>
+        <p class="loading-text">Загрузка...</p>
+    </div>
+
+    <!-- Toast уведомление -->
+    <div id="toast" class="toast" style="display: none;">
+        <div class="toast-icon"></div>
+        <div class="toast-text"></div>
+    </div>
+
+    <script src="popup.js" type="module"></script>
+</body>
+
+</html>

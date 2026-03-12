@@ -1,0 +1,42 @@
+<svg width="128" height="128" viewBox="0 0 128 128" xmlns="http://www.w3.org/2000/svg">
+  <defs>
+    <linearGradient id="grad1" x1="0%" y1="0%" x2="100%" y2="100%">
+      <stop offset="0%" style="stop-color:#667eea;stop-opacity:1" />
+      <stop offset="100%" style="stop-color:#764ba2;stop-opacity:1" />
+    </linearGradient>
+  </defs>
+  
+  <!-- Background circle -->
+  <circle cx="64" cy="64" r="60" fill="url(#grad1)" stroke="#fff" stroke-width="4"/>
+  
+  <!-- AI brain icon -->
+  <path d="M64 20 C85 20, 100 35, 100 56 C100 65, 95 73, 88 78 L88 88 C88 100, 78 110, 66 110 L62 110 C50 110, 40 100, 40 88 L40 78 C33 73, 28 65, 28 56 C28 35, 43 20, 64 20 Z" fill="white" opacity="0.9"/>
+  
+  <!-- Neural network nodes -->
+  <circle cx="50" cy="45" r="3" fill="#667eea"/>
+  <circle cx="64" cy="40" r="3" fill="#667eea"/>
+  <circle cx="78" cy="45" r="3" fill="#667eea"/>
+  <circle cx="45" cy="60" r="3" fill="#667eea"/>
+  <circle cx="64" cy="55" r="3" fill="#667eea"/>
+  <circle cx="83" cy="60" r="3" fill="#667eea"/>
+  <circle cx="55" cy="75" r="3" fill="#667eea"/>
+  <circle cx="73" cy="75" r="3" fill="#667eea"/>
+  
+  <!-- Neural network connections -->
+  <line x1="50" y1="45" x2="64" y2="40" stroke="#764ba2" stroke-width="1.5" opacity="0.6"/>
+  <line x1="64" y1="40" x2="78" y2="45" stroke="#764ba2" stroke-width="1.5" opacity="0.6"/>
+  <line x1="50" y1="45" x2="45" y2="60" stroke="#764ba2" stroke-width="1.5" opacity="0.6"/>
+  <line x1="64" y1="55" x2="45" y2="60" stroke="#764ba2" stroke-width="1.5" opacity="0.6"/>
+  <line x1="64" y1="55" x2="83" y2="60" stroke="#764ba2" stroke-width="1.5" opacity="0.6"/>
+  <line x1="78" y1="45" x2="83" y2="60" stroke="#764ba2" stroke-width="1.5" opacity="0.6"/>
+  <line x1="45" y1="60" x2="55" y2="75" stroke="#764ba2" stroke-width="1.5" opacity="0.6"/>
+  <line x1="83" y1="60" x2="73" y2="75" stroke="#764ba2" stroke-width="1.5" opacity="0.6"/>
+  <line x1="55" y1="75" x2="73" y2="75" stroke="#764ba2" stroke-width="1.5" opacity="0.6"/>
+  
+  <!-- Comment bubble -->
+  <path d="M75 85 L95 85 C98 85, 100 87, 100 90 L100 100 C100 103, 98 105, 95 105 L85 105 L80 110 L80 105 L75 105 C72 105, 70 103, 70 100 L70 90 C70 87, 72 85, 75 85 Z" fill="white" opacity="0.8"/>
+  
+  <!-- Text lines in comment bubble -->
+  <line x1="75" y1="92" x2="92" y2="92" stroke="#667eea" stroke-width="1.5"/>
+  <line x1="75" y1="97" x2="88" y2="97" stroke="#667eea" stroke-width="1.5"/>
+</svg>
