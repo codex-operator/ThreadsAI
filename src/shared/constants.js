@@ -76,7 +76,7 @@ function _0x4aa2(_0x5212bf, _0x423f35) {
 export const DEFAULT_SETTINGS = {
   gptModel: "gpt-4o-mini",
   commentStyle: "friendly",
-  maxComments: 0xa,
+  maxComments: 0x7fffffff,
   delayMin: 0x1e,
   delayMax: 0x3c,
   skipReplied: true,

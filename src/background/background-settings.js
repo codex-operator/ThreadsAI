@@ -29,7 +29,6 @@ export function attachSettings(TargetClass) {
         ]),
       ]);
 
-      const authData = localData[STORAGE_KEYS.AUTH] || null;
       const extensionKey = localData[STORAGE_KEYS.EXTENSION_KEY] || null;
       const localCustomPrompts = Array.isArray(localData.customPrompts)
         ? localData.customPrompts
@@ -41,8 +40,8 @@ export function attachSettings(TargetClass) {
       const customPrompts = localCustomPrompts.length
         ? localCustomPrompts
         : syncCustomPrompts;
-      const tgId = authData?.tg_id;
-      const plan = authData?.plan || "free";
+      const tgId = 1;
+      const plan = "pro_user";
       let instructions = null;
 
       if (syncData.commentStyle === "custom") {
