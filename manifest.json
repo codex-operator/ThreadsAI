@@ -1,21 +1,19 @@
 {
   "manifest_version": 3,
   "name": "ThreadsAI",
-  "version": "1.1.3",
-  "description": "AI-powered smart commenting tool for Threads with GPT integration",
+  "version": "2.0.0",
+  "description": "AI-комментатор для Threads на основе OpenAI",
 
   "permissions": [
     "activeTab",
     "scripting",
     "storage",
-    "tabs",
-    "downloads",
-    "declarativeNetRequest"
+    "tabs"
   ],
 
   "host_permissions": [
     "https://*.threads.com/*",
-    "https://*.supabase.co/*",
+    "https://api.openai.com/*",
     "https://*.cdninstagram.com/*",
     "https://*.fbcdn.net/*"
   ],
@@ -44,27 +42,17 @@
     "default_popup": "src/popup/popup.html",
     "default_title": "ThreadsAI",
     "default_icon": {
-      "16": "src/icons/icon16.png",
-      "32": "src/icons/icon32.png",
-      "48": "src/icons/icon48.png",
+      "16":  "src/icons/icon16.png",
+      "32":  "src/icons/icon32.png",
+      "48":  "src/icons/icon48.png",
       "128": "src/icons/icon128.png"
     }
   },
 
   "icons": {
-    "16": "src/icons/icon16.png",
-    "32": "src/icons/icon32.png",
-    "48": "src/icons/icon48.png",
+    "16":  "src/icons/icon16.png",
+    "32":  "src/icons/icon32.png",
+    "48":  "src/icons/icon48.png",
     "128": "src/icons/icon128.png"
-  },
-
-  "declarative_net_request": {
-    "rule_resources": [
-      {
-        "id": "cdn_headers",
-        "enabled": true,
-        "path": "rules/cdn_headers.json"
-      }
-    ]
   }
 }
