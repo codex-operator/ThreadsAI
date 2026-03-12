@@ -21,14 +21,18 @@ async function loadSettings() {
 }
 
 function applySettingsToForm(s) {
-  if ($('#openai-api-key')) $('#openai-api-key').value  = s.openaiApiKey  || '';
-  if ($('#gpt-model'))      $('#gpt-model').value       = s.gptModel      || 'gpt-4o-mini';
-  if ($('#comment-style'))  $('#comment-style').value   = s.commentStyle  || 'friendly';
-  if ($('#custom-prompt'))  $('#custom-prompt').value   = s.customPrompt  || '';
-  if ($('#max-comments'))   $('#max-comments').value    = s.maxComments   || 10;
-  if ($('#delay-min'))      $('#delay-min').value       = s.delayMin      || 30;
-  if ($('#delay-max'))      $('#delay-max').value       = s.delayMax      || 60;
-  if ($('#skip-replied'))   $('#skip-replied').checked  = s.skipReplied   !== false;
+  if ($('#ai-provider'))    $('#ai-provider').value    = s.aiProvider   || 'openai';
+  if ($('#openai-api-key')) $('#openai-api-key').value = s.openaiApiKey || '';
+  if ($('#gemini-api-key')) $('#gemini-api-key').value = s.geminiApiKey || '';
+  if ($('#gemini-model'))   $('#gemini-model').value   = s.geminiModel  || 'gemini-2.0-flash';
+  if ($('#gpt-model'))      $('#gpt-model').value      = s.gptModel     || 'gpt-4o-mini';
+  if ($('#comment-style'))  $('#comment-style').value  = s.commentStyle || 'friendly';
+  if ($('#custom-prompt'))  $('#custom-prompt').value  = s.customPrompt || '';
+  if ($('#max-comments'))   $('#max-comments').value   = s.maxComments  || 10;
+  if ($('#delay-min'))      $('#delay-min').value      = s.delayMin     || 30;
+  if ($('#delay-max'))      $('#delay-max').value      = s.delayMax     || 60;
+  if ($('#skip-replied'))   $('#skip-replied').checked = s.skipReplied  !== false;
+  toggleProviderSections(s.aiProvider || 'openai');
   toggleCustomPrompt(s.commentStyle);
 }
 
@@ -44,6 +48,10 @@ function bindEvents() {
   });
   $('#save-settings')?.addEventListener('click', saveSettings);
 
+  $('#ai-provider')?.addEventListener('change', (e) => {
+    toggleProviderSections(e.target.value);
+  });
+
   $('#comment-style')?.addEventListener('change', (e) => {
     toggleCustomPrompt(e.target.value);
   });
@@ -58,6 +66,14 @@ function bindEvents() {
   $('#btn-inline-mode')?.addEventListener('click', toggleInlineMode);
 }
 
+function toggleProviderSections(provider) {
+  const isOpenAI = provider === 'openai';
+  if ($('#openai-section')) $('#openai-section').style.display = isOpenAI ? '' : 'none';
+  if ($('#gemini-section')) $('#gemini-section').style.display = isOpenAI ? 'none' : '';
+  const gptGroup = $('#gpt-model')?.closest('.form-group');
+  if (gptGroup) gptGroup.style.display = isOpenAI ? '' : 'none';
+}
+
 function toggleCustomPrompt(style) {
   const group = $('#custom-prompt-group');
   if (group) group.style.display = (style === 'custom') ? 'block' : 'none';
@@ -66,14 +82,17 @@ function toggleCustomPrompt(style) {
 // ── Сохранение настроек ──────────────────────────────────────
 async function saveSettings() {
   const newSettings = {
-    openaiApiKey:  $('#openai-api-key')?.value.trim() || '',
-    gptModel:      $('#gpt-model')?.value             || 'gpt-4o-mini',
-    commentStyle:  $('#comment-style')?.value         || 'friendly',
-    customPrompt:  $('#custom-prompt')?.value.trim()  || '',
-    maxComments:   parseInt($('#max-comments')?.value) || 10,
-    delayMin:      parseInt($('#delay-min')?.value)    || 30,
-    delayMax:      parseInt($('#delay-max')?.value)    || 60,
-    skipReplied:   $('#skip-replied')?.checked         ?? true,
+    aiProvider:    $('#ai-provider')?.value            || 'openai',
+    openaiApiKey:  $('#openai-api-key')?.value.trim()  || '',
+    geminiApiKey:  $('#gemini-api-key')?.value.trim()  || '',
+    geminiModel:   $('#gemini-model')?.value            || 'gemini-2.0-flash',
+    gptModel:      $('#gpt-model')?.value               || 'gpt-4o-mini',
+    commentStyle:  $('#comment-style')?.value           || 'friendly',
+    customPrompt:  $('#custom-prompt')?.value.trim()    || '',
+    maxComments:   parseInt($('#max-comments')?.value)  || 10,
+    delayMin:      parseInt($('#delay-min')?.value)     || 30,
+    delayMax:      parseInt($('#delay-max')?.value)     || 60,
+    skipReplied:   $('#skip-replied')?.checked          ?? true,
   };
 
   await chrome.runtime.sendMessage({ type: 'save_settings', settings: newSettings });
@@ -85,11 +104,14 @@ async function saveSettings() {
 // ── Старт / Стоп ─────────────────────────────────────────────
 async function toggleRunning() {
   if (!isRunning) {
-    if (!settings.openaiApiKey) {
-      addLog('❌ Укажите OpenAI API Key в настройках');
+    const provider = settings.aiProvider || 'openai';
+    const hasKey   = provider === 'gemini' ? settings.geminiApiKey : settings.openaiApiKey;
+    if (!hasKey) {
+      addLog(`❌ Укажите ${provider === 'gemini' ? 'Gemini' : 'OpenAI'} API Key в настройках`);
       $('#settings-modal')?.classList.add('open');
       return;
     }
+
     isRunning      = true;
     commentCount   = 0;
     processedCount = 0;
@@ -123,6 +145,12 @@ function updateUI() {
   if (counter) counter.textContent = commentCount;
   const procCounter = $('#processed-counter');
   if (procCounter) procCounter.textContent = processedCount;
+
+  const max  = settings.maxComments || 10;
+  const fill = $('#progress-fill');
+  const text = $('#progress-text');
+  if (fill) fill.style.width = `${Math.min((commentCount / max) * 100, 100)}%`;
+  if (text) text.textContent = `${commentCount} / ${max}`;
 }
 
 // ── Логи ─────────────────────────────────────────────────────
@@ -172,8 +200,8 @@ async function toggleInlineMode() {
 
 // ── Сообщения от content-script ──────────────────────────────
 chrome.runtime.onMessage.addListener((msg) => {
-  if (msg.type === 'log')             addLog(msg.text);
-  if (msg.type === 'comment_done')    { commentCount++;    updateUI(); }
-  if (msg.type === 'post_processed')  { processedCount++;  updateUI(); }
-  if (msg.type === 'finished')        { isRunning = false; updateUI(); addLog('✅ Завершено'); }
+  if (msg.type === 'log')            addLog(msg.text);
+  if (msg.type === 'comment_done')   { commentCount++;   updateUI(); }
+  if (msg.type === 'post_processed') { processedCount++; updateUI(); }
+  if (msg.type === 'finished')       { isRunning = false; updateUI(); addLog('✅ Завершено'); }
 });

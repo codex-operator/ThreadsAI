@@ -11,12 +11,13 @@
     "tabs"
   ],
 
-  "host_permissions": [
-    "https://*.threads.com/*",
-    "https://api.openai.com/*",
-    "https://*.cdninstagram.com/*",
-    "https://*.fbcdn.net/*"
-  ],
+"host_permissions": [
+  "https://*.threads.com/*",
+  "https://api.openai.com/*",
+  "https://generativelanguage.googleapis.com/*",
+  "https://*.cdninstagram.com/*",
+  "https://*.fbcdn.net/*"
+],
 
   "background": {
     "service_worker": "src/background/service-worker.js",
