@@ -1,1 +1,232 @@
-const _0x440ee3=_0x3302;(function(_0x4766f4,_0x2a543e){const _0x57ea11={_0x98b360:0xb5,_0x3c2a9f:0xb2,_0x3ed6dd:0xd0,_0x16cdda:0xda},_0x277f53=_0x3302,_0x1115c9=_0x4766f4();while(!![]){try{const _0x111eb1=-parseInt(_0x277f53(_0x57ea11._0x98b360))/(-0x5dc+0x23c3*-0x1+-0x534*-0x8)*(-parseInt(_0x277f53(0xee))/(-0xf26+-0x1*-0xdf6+-0x66*-0x3))+parseInt(_0x277f53(0x10b))/(-0xd2a+0x1*-0x110f+0x3*0xa14)*(parseInt(_0x277f53(_0x57ea11._0x3c2a9f))/(-0x2fc*0x1+0x1*-0xb2d+0xe2d*0x1))+parseInt(_0x277f53(0xde))/(0x1*-0x25f9+-0x17*0x14b+0x43bb)+parseInt(_0x277f53(_0x57ea11._0x3ed6dd))/(-0x77b*-0x1+-0x562+0x1*-0x213)*(-parseInt(_0x277f53(0xe4))/(-0x3e*-0x54+0x1537+-0x2988))+-parseInt(_0x277f53(_0x57ea11._0x16cdda))/(-0x9e3+0xd*-0x8b+0x10fa)+-parseInt(_0x277f53(0xb8))/(-0x3*0x377+0x7*-0x29+0xb8d)*(parseInt(_0x277f53(0xfc))/(-0x180d+-0x203a+0x3851))+-parseInt(_0x277f53(0xa6))/(0xd4f*-0x2+0xa91+0x1018)*(-parseInt(_0x277f53(0xbf))/(0x17c5+-0x1709+-0xb0));if(_0x111eb1===_0x2a543e)break;else _0x1115c9['push'](_0x1115c9['shift']());}catch(_0x32f4d7){_0x1115c9['push'](_0x1115c9['shift']());}}}(_0x3368,-0xeb*0x3f5+0x73*0x50e+0x366e8));import{DEFAULT_SETTINGS}from'../config.js';import{attachSettings}from'./background-settings.js';import{attachLimits}from'./background-limits.js';const DEBUG_SW=![],swDebug=(..._0x3ec174)=>{const _0xecf944=_0x3302;if(DEBUG_SW)console[_0xecf944(0xb4)](..._0x3ec174);};function _0x3368(){const _0x3b81a4=['mtiWntKYwu9Pq3Hj','0j7rInc40lhqUTcWinc/0ydqUcdqV9c10ydqSTc+0lKG0yprGDgc0ldqVDc+0llqUTc1oG','Aw5JBhvKzxm','nZy1otbAuKzey0O','q29UDgvUDcbZy3jPChqG0l3qTsdqS9c+0ylqVTcYoG','y29UDgvUDf9YzwfKEq','zwPbBKS','C3LUyW','C3rVCMfNzq','Axnby3rPDMu','mZCYmJa0DeTnrhLb','Cu5OwvO','DhLWzq','C2f2zv9Zzxr0Aw5NCW','zxjYB3jmB2DZ','inc90laG','y29TBwvUDgLUz19ZDgfYDgvK','DgfIswq','BvzXzfK','De9Wr2e','qxHJBLG','C3vIC2nYAxb0Aw9Ux2v4CgLYzwq','vwTqs1G','rLvgEuO','C2f2zvnLDhrPBMDZ','ywrKtgLZDgvUzxi','ze9iAeS','nZKZntmWuxvuC2f3','DeLowe8','0j3qSngb0ylrGnc+0lNqUTc4inc/0l4G0ypqVnc+0lVrH9cW0l3qUngoingd0yhrGTcW0l3qVTcY0lVqTDc90yS','ywn0AxzLvgfIswq','Bg9NrxjYB3i','y29TBwvUDf9WB3n0zwq','ENjmz0u','DgDFAwq','0j7qSDc90l7qSTc70lxqVDc40luG0yeG0llqTDga0yhqUnc4ia','Cg9ZDf9KyxrH','mtCYotaWohfdBfj6ra','B25by3rPDMf0zwq','CMvZzxj2zv9WyxjZAw5Nx3nSB3q','C3vJy2vZCW','oduXmZbruhPOzfq','Bg9Nx2vYCM9Y','0j7rInc40lhqUTcWinc+0yiGy29UDgvUDcbZy3jPChq6','BM93','C2v0vgfIqxv0B0rPC2nHCMrHyMXL','ELDmD2e','n0DtB3b4zW','BgvUz3rO','C2v0','DgfICW','vwTrzhi','0j7rInc40lhqUTcWinc70l7qS9c40ydqVTcY0ldqVDc40y86','rMfTr08','zxjYB3i','BwvZC2fNzq','z2v0x2LUBgLUzv9HAv9Zzxr0Aw5NCW','mKXNDg11wa','zwPpBgK','uuXhCg4','Bxfqvwu','ChjVx3vZzxi','vgHYzwfKC0fjifnLCNzPy2uGv29YA2vYinc40l3qUngg0lJqSnc70lJqT9c40ydqVTcY0ldqVq','0j7rInc40lhqUTcWinc+0lhrGncW0lhqVTgc0lRqUcdrGDc+0l7qSDgj0lxqVDc40y86','Dvfqwu0','Aw5PDa','C2TPChbLza','B25jBNn0ywXSzwq','ChvZAa','vw5RBM93BIbTzxnZywDLihr5Cgu','z2v0u2v0DgLUz3m','mtbOvMDhtuq','uKnSt1u','DxbKyxrL','B25gAxjZDeLUC3rHBgW','DxvhB0G','y1rbs0G','C3rHDhvZx3vWzgf0zq','y29TBwvUDgLUz19MAw5PC2HLza','DxjS','B25vCgrHDgu','ChjLDMLVDxnwzxjZAw9U','y29TBwvUDgLUz19ZDg9WCgvK','C2vUze1LC3nHz2u','B25vCgrHDgvK','B25uAhjLywrZugfNzuXVywrLza','mJu5oti5y09rzgLd','AgfUzgXLtwvZC2fNzq','0j7rInc40lhqUTcWinc/0ydqUcdqVTcX0l3qVTcY0lVqTDc90lJqUdO','mZn4q1DkvfC','DgHLBG','C2v0DxbfDMvUDeXPC3rLBMvYCW','DgfI','z2v0x3nLDhrPBMDZ','CMvHC29U','y2f0y2G','y29UDgv4Da','C2v0DgLUz3m','wvzUywm','Bg9JywW','sLPiDeu','mtj6q25wBMi','CNvUDgLTzq','Bg9N'];_0x3368=function(){return _0x3b81a4;};return _0x3368();}function _0x3302(_0x4ba7e3,_0x3f710c){_0x4ba7e3=_0x4ba7e3-(0x1*0x595+-0x177c+0x128b);const _0x482e3b=_0x3368();let _0x24f564=_0x482e3b[_0x4ba7e3];if(_0x3302['PTSZvq']===undefined){var _0x4b6d76=function(_0x33f768){const _0x2f94a4='abcdefghijklmnopqrstuvwxyzABCDEFGHIJKLMNOPQRSTUVWXYZ0123456789+/=';let _0x42ae16='',_0x63d304='';for(let _0xa9aecd=-0x1*-0x1813+-0x403*-0x1+-0x1*0x1c16,_0x465de5,_0x5f00ea,_0x109171=-0x5*-0xa4+0x146e+-0x17a2;_0x5f00ea=_0x33f768['charAt'](_0x109171++);~_0x5f00ea&&(_0x465de5=_0xa9aecd%(0x15*-0x139+0x14e+-0x1*-0x1863)?_0x465de5*(-0x1*0xcae+0x3c7*0x2+0x4*0x158)+_0x5f00ea:_0x5f00ea,_0xa9aecd++%(-0x595+0x139b+-0xe02))?_0x42ae16+=String['fromCharCode'](-0x1dd0+-0x623+0x24f2&_0x465de5>>(-(-0xe22+0x25ea+-0x2*0xbe3)*_0xa9aecd&-0x73*0x53+-0x20cb*-0x1+0x121*0x4)):-0x22*-0x17+-0x1317+0x1009){_0x5f00ea=_0x2f94a4['indexOf'](_0x5f00ea);}for(let _0x6e35b8=-0x5d1*0x1+-0x5*0x724+0x2985,_0x5231b8=_0x42ae16['length'];_0x6e35b8<_0x5231b8;_0x6e35b8++){_0x63d304+='%'+('00'+_0x42ae16['charCodeAt'](_0x6e35b8)['toString'](-0x1621+-0x65*0x13+0x1db0))['slice'](-(-0x1*-0x144d+0x2b*0x97+-0x3ce*0xc));}return decodeURIComponent(_0x63d304);};_0x3302['bEqxuL']=_0x4b6d76,_0x3302['qEoVby']={},_0x3302['PTSZvq']=!![];}const _0x205234=_0x482e3b[0x2162+-0x5f*0x34+-0xe16],_0x25cd9c=_0x4ba7e3+_0x205234,_0x249c74=_0x3302['qEoVby'][_0x25cd9c];return!_0x249c74?(_0x24f564=_0x3302['bEqxuL'](_0x24f564),_0x3302['qEoVby'][_0x25cd9c]=_0x24f564):_0x24f564=_0x249c74,_0x24f564;}class ThreadsAIServiceWorker{constructor(){const _0x1934fa={_0x178e10:0xd3},_0x18afe1=_0x3302;this[_0x18afe1(0xbe)]=![],this[_0x18afe1(_0x1934fa._0x178e10)]=null,this['init']();}async['setTabAutoDiscardable'](_0x11bbf4,_0x2f4da5){const _0x52bca3={_0x37e23a:0xfe},_0x2c61ec=_0x3302;if(!_0x11bbf4)return;try{await chrome['tabs'][_0x2c61ec(_0x52bca3._0x37e23a)](_0x11bbf4,{'autoDiscardable':_0x2f4da5});}catch(_0x4a238e){}}[_0x440ee3(0xf6)](){const _0x4d424a={'vfhxu':function(_0x25521d,_0xe6c81a){return _0x25521d(_0xe6c81a);}};this['setupEventListeners'](),_0x4d424a['vfhxu'](swDebug,'ThreadsAI\x20Service\x20Worker\x20инициализирован');}[_0x440ee3(0xa8)](){const _0x120a4f={_0x3541da:0xf8,_0x58b8de:0xce,_0x289ec4:0xdb},_0x31d481={_0x580bd0:0xe7},_0x227f6b={_0x550dfc:0xb7,_0x89fd5e:0x10a},_0xb71c5c={_0x5b07a6:0xab,_0x4a5ac8:0x106},_0x374a4b=_0x440ee3,_0x351041={'RClOU':function(_0x2488cb,_0x5571ac,_0x2c88f3){return _0x2488cb(_0x5571ac,_0x2c88f3);},'ejOli':'ThreadsAI\x20расширение\x20установлено:','ZqNMk':_0x374a4b(0xfe),'AxcnX':'Браузер\x20запущен,\x20ThreadsAI\x20готов\x20к\x20работе','KdaTL':function(_0x5b0a93,_0x86bc7f){return _0x5b0a93===_0x86bc7f;}};chrome[_0x374a4b(0xb3)][_0x374a4b(_0x120a4f._0x3541da)]['addListener'](_0x48eec0=>{const _0x4c2ee6=_0x374a4b;_0x351041[_0x4c2ee6(0xfd)](swDebug,_0x351041[_0x4c2ee6(0xef)],_0x48eec0['reason']);if(_0x48eec0[_0x4c2ee6(_0xb71c5c._0x5b07a6)]==='install')this['onFirstInstall']();else _0x48eec0['reason']===_0x351041['ZqNMk']&&this['onUpdate'](_0x48eec0[_0x4c2ee6(_0xb71c5c._0x4a5ac8)]);}),chrome['runtime']['onStartup']['addListener'](()=>{const _0x447840=_0x374a4b;swDebug(_0x351041[_0x447840(0xc9)]);}),chrome['runtime']['onMessage'][_0x374a4b(_0x120a4f._0x58b8de)]((_0x1b5372,_0x3742ba,_0x31ace0)=>{return this['handleMessage'](_0x1b5372,_0x3742ba,_0x31ace0),!![];}),chrome['tabs'][_0x374a4b(0x109)]['addListener']((_0x2680c8,_0x7396cd,_0x32e1d2)=>{const _0x113f28=_0x374a4b;_0x351041['KdaTL'](_0x7396cd['status'],'complete')&&_0x32e1d2[_0x113f28(0x104)]&&_0x32e1d2['url'][_0x113f28(_0x227f6b._0x550dfc)]('threads.com')&&this[_0x113f28(_0x227f6b._0x89fd5e)](_0x2680c8,_0x32e1d2);}),chrome['tabs'][_0x374a4b(_0x120a4f._0x289ec4)]['addListener'](_0x425949=>{const _0x105a49=_0x374a4b,_0x33b8ca={'PwHVI':'threads.com'};chrome[_0x105a49(_0x31d481._0x580bd0)]['get'](_0x425949[_0x105a49(0xc6)],_0x259404=>{const _0x3f954a=_0x105a49;if(chrome['runtime']['lastError'])return;_0x259404?.[_0x3f954a(0x104)]?.['includes'](_0x33b8ca['PwHVI'])&&(this['activeTabId']=_0x425949[_0x3f954a(0xc6)]);});});}async[_0x440ee3(0xff)](){const _0xe0e11b={_0x8e90e1:0xb6,_0x49e126:0xbd,_0x9d140c:0xb1},_0x2eec6a=_0x440ee3,_0xa2715={'SuUyc':function(_0xa3c8f6,_0x13d3bd){return _0xa3c8f6(_0x13d3bd);},'JZHtE':_0x2eec6a(_0xe0e11b._0x8e90e1)};try{await chrome['storage']['sync']['set']({...DEFAULT_SETTINGS,'firstRun':!![]}),await chrome[_0x2eec6a(_0xe0e11b._0x49e126)]['local'][_0x2eec6a(0xe6)]({'sessionStats':{'comments':0x0,'processed':0x0,'errors':0x0},'totalStats':{'comments':0x0,'processed':0x0,'errors':0x0},'lastRun':null}),_0xa2715['SuUyc'](swDebug,_0x2eec6a(0xd2));}catch(_0x51559b){console['error'](_0xa2715[_0x2eec6a(_0xe0e11b._0x9d140c)],_0x51559b);}}async[_0x440ee3(0x105)](_0x2ae009){const _0x4f89ed={_0x9b447:0xb9,_0x5c939c:0xf1,_0xa38cd0:0xbd,_0x4340d8:0xbc,_0x4d2ddc:0xb3,_0x455379:0xa5},_0x15e52e=_0x440ee3,_0x5dc0e1={'TTitx':_0x15e52e(_0x4f89ed._0x9b447),'mqPUe':function(_0x2210f1,_0x5b4712){return _0x2210f1(_0x5b4712);},'UzjLG':function(_0x388589,_0x4b2925){return _0x388589!==_0x4b2925;},'UkPKX':'friendly','FZwTL':function(_0x28f2e8,_0x59cd93){return _0x28f2e8(_0x59cd93);}};_0x5dc0e1[_0x15e52e(_0x4f89ed._0x5c939c)](swDebug,_0x15e52e(0xd8)+_0x2ae009+_0x15e52e(0xc4)+chrome[_0x15e52e(0xb3)]['getManifest']()['version']);try{if(_0x5dc0e1['UzjLG']('uecGh','IZxFA')){const _0x573f62=await chrome['storage']['sync']['get']();let _0x5b732e=![];!_0x573f62['commentStyle']&&(_0x573f62['commentStyle']=_0x5dc0e1[_0x15e52e(0xcb)],_0x5b732e=!![]),_0x5b732e&&(await chrome[_0x15e52e(_0x4f89ed._0xa38cd0)][_0x15e52e(_0x4f89ed._0x4340d8)]['set'](_0x573f62),_0x5dc0e1['FZwTL'](swDebug,'Настройки\x20обновлены'));}else _0x443f3d[_0x15e52e(_0x4f89ed._0x4d2ddc)]['lastError']&&_0x39c7f5(_0x5dc0e1['TTitx'],_0x8632e1['runtime']['lastError'][_0x15e52e(0xec)]);}catch(_0x2862f4){console['error'](_0x15e52e(_0x4f89ed._0x455379),_0x2862f4);}}[_0x440ee3(0xa4)](_0x553969,_0x134907,_0x5bbc6f){const _0x4222ae={_0x3e304c:0xba,_0x4157a3:0x102,_0x2f2bbe:0xf4,_0x3306c7:0xf5,_0x15e710:0xf5,_0x589d3d:0xaa,_0x384d3f:0xfb,_0x400a03:0xc2,_0x491bcd:0xc0,_0x546620:0xa9,_0xd3c295:0xbe,_0xe33a25:0xd3,_0xd60d45:0xf3,_0x4ad32e:0xdf,_0x288191:0xe0,_0x20ba0d:0xeb,_0x4ba9b3:0xd4,_0x5970cf:0xeb,_0x2c4be0:0xa7,_0x3d8d10:0xdc,_0x4b6fbb:0xd7,_0x5b84a:0xaf,_0xdbba:0xca,_0x3673e4:0xe2,_0x1222ea:0xd1,_0x29d05f:0x100},_0x4c0dd9={_0x425d4f:0xd6,_0x251a1c:0xab,_0x448c6f:0xf7,_0x392137:0xdd,_0x47b1b1:0xe2,_0x30286a:0xd3},_0x55adae=_0x440ee3,_0x580d4f={'zWLwa':'IwPXT','zrLgE':function(_0xd16c01,_0x1795e9){return _0xd16c01===_0x1795e9;},'FUFyJ':function(_0x5a5043,_0x51b76a){return _0x5a5043(_0x51b76a);},'FamGO':'CCBNC','xMtTd':function(_0x10abef,_0x51e4ac){return _0x10abef!==_0x51e4ac;},'cTAKH':'hUWAV','dOHhK':'Service\x20Worker\x20получил\x20сообщение:','qNhYZ':_0x55adae(0xc5),'ziMyi':_0x55adae(0x107),'tLEjY':function(_0x136c4b,_0x1a164e,_0x2c6386){return _0x136c4b(_0x1a164e,_0x2c6386);},'xPweQ':_0x55adae(0xd5),'EIJxi':_0x55adae(_0x4222ae._0x3e304c),'YVnac':_0x55adae(_0x4222ae._0x4157a3),'FKTcS':'typing_progress','mVqdY':'comments_left_update','tsRBT':'free_limit_reached','tOpGa':'auth_invalid','RcVGb':'post_processed','Hporm':_0x55adae(0xd9),'LcPbC':'post_reply','QuyJx':function(_0x1b19eb,_0x3ca8be,_0x3f6e91){return _0x1b19eb(_0x3ca8be,_0x3f6e91);},'tINXO':'Неизвестный\x20тип\x20сообщения:','pwCES':_0x55adae(0xfa),'uuGoH':_0x55adae(_0x4222ae._0x2f2bbe)};swDebug(_0x580d4f[_0x55adae(0xcf)],_0x553969['type']);try{if(_0x55adae(_0x4222ae._0x3306c7)===_0x55adae(_0x4222ae._0x15e710))switch(_0x553969[_0x55adae(0xc1)]){case _0x55adae(0xed):this['getInlineAISettings']()['then'](_0x4192ee=>_0x5bbc6f({'success':!![],'settings':_0x4192ee}))[_0x55adae(0xac)](_0x80368f=>_0x5bbc6f({'success':![],'error':_0x80368f[_0x55adae(0xec)]}));return!![];case _0x55adae(_0x4222ae._0x589d3d):this[_0x55adae(_0x4222ae._0x384d3f)]()[_0x55adae(0xa7)](_0x244019=>_0x5bbc6f({'success':!![],'settings':_0x244019}))['catch'](_0x1e3239=>_0x5bbc6f({'success':![],'error':_0x1e3239['message']}));return!![];case _0x55adae(_0x4222ae._0x400a03):this[_0x55adae(0xcd)](_0x553969[_0x55adae(0xae)])['then'](()=>_0x5bbc6f({'success':!![]}))['catch'](_0x3a43f6=>_0x5bbc6f({'success':![],'error':_0x3a43f6['message']}));return!![];case _0x580d4f[_0x55adae(_0x4222ae._0x491bcd)]:this['isActive']=!![],this[_0x55adae(0xd3)]=_0x134907[_0x55adae(_0x4222ae._0x546620)]?.['id'];this['activeTabId']&&this['setTabAutoDiscardable'](this[_0x55adae(0xd3)],![]);_0x5bbc6f({'success':!![]});break;case _0x580d4f['ziMyi']:this[_0x55adae(_0x4222ae._0xd3c295)]=![];{const _0x23440c=_0x134907[_0x55adae(0xa9)]?.['id']||this[_0x55adae(_0x4222ae._0xe33a25)];_0x23440c&&('WQkBg'==='hPOwl'?(this[_0x55adae(0xa8)](),_0x2312a2(_0x55adae(_0x4222ae._0xd60d45))):this['setTabAutoDiscardable'](_0x23440c,!![]));}this['activeTabId']=null,_0x5bbc6f({'success':!![]});break;case _0x55adae(_0x4222ae._0x4ad32e):_0x580d4f['tLEjY'](swDebug,_0x55adae(_0x4222ae._0x288191),_0x553969[_0x55adae(_0x4222ae._0x20ba0d)]),this[_0x55adae(_0x4222ae._0x4ba9b3)](_0x553969[_0x55adae(_0x4222ae._0x5970cf)],_0x553969[_0x55adae(0xad)])[_0x55adae(_0x4222ae._0x2c4be0)](()=>_0x5bbc6f({'success':!![]}))[_0x55adae(0xac)](_0x255ec2=>_0x5bbc6f({'success':![],'error':_0x255ec2['message']}));return!![];case _0x580d4f['xPweQ']:_0x5bbc6f({'success':!![]});break;case _0x55adae(_0x4222ae._0x3d8d10):this['decrementFreeParsing']({'tg_id':_0x553969[_0x55adae(_0x4222ae._0x4b6fbb)],'extension_key':_0x553969['extension_key']})[_0x55adae(0xa7)](_0x2b038d=>{const _0xd9326=_0x55adae,_0x28bce2={'LhkMN':function(_0x8ca98b,_0x237d38){return _0x8ca98b(_0x237d38);}};if(_0x2b038d[_0xd9326(0xf7)])_0x580d4f[_0xd9326(0xe3)]===_0x580d4f['zWLwa']?_0x580d4f[_0xd9326(_0x4c0dd9._0x425d4f)](_0x2b038d[_0xd9326(0xab)],'pro_user')?_0x580d4f[_0xd9326(0xcc)](_0x5bbc6f,{'success':!![],'parsing_left':-(0x89*-0x25+-0x116b+0x2539),'reason':_0xd9326(0xf2)}):_0x580d4f['FamGO']!==_0x580d4f[_0xd9326(0xea)]?_0x28bce2['LhkMN'](_0x3558f1,{'success':!![],'parsing_left':_0x6241e1['parsing_left'],'reason':_0x2be7a9[_0xd9326(_0x4c0dd9._0x251a1c)]||'ok'}):_0x580d4f[_0xd9326(0xcc)](_0x5bbc6f,{'success':![],'error':_0x2b038d[_0xd9326(0xab)]||_0xd9326(_0x4c0dd9._0x448c6f)}):this['onThreadsPageLoaded'](_0x59cf89,_0x15bfa6);else _0x2b038d[_0xd9326(_0x4c0dd9._0x392137)]?_0x580d4f['xMtTd'](_0x580d4f[_0xd9326(0x101)],'hUWAV')?this[_0xd9326(_0x4c0dd9._0x47b1b1)](this[_0xd9326(_0x4c0dd9._0x30286a)],!![]):_0x5bbc6f({'success':!![],'parsing_left':_0x2b038d['parsing_left'],'reason':_0x2b038d[_0xd9326(_0x4c0dd9._0x251a1c)]||'ok'}):_0x5bbc6f({'success':![],'error':_0x2b038d['error'],'parsing_left':_0x2b038d['parsing_left']});})['catch'](_0x5ef87b=>_0x5bbc6f({'success':![],'error':_0x5ef87b['message']}));return!![];case _0x580d4f['EIJxi']:case _0x580d4f[_0x55adae(_0x4222ae._0x5b84a)]:case'log_entry':case'action_update':case _0x580d4f['FKTcS']:case _0x580d4f[_0x55adae(0xc7)]:case _0x580d4f['tsRBT']:case _0x55adae(_0x4222ae._0xdbba):case _0x580d4f[_0x55adae(0xc8)]:case'plan_downgraded':case'tech_log':case _0x580d4f['RcVGb']:case _0x580d4f['Hporm']:case _0x580d4f['LcPbC']:_0x5bbc6f({'success':!![]});break;case _0x55adae(0x103):this['isActive']=![];this[_0x55adae(_0x4222ae._0xe33a25)]&&this[_0x55adae(_0x4222ae._0x3673e4)](this['activeTabId'],!![]);this[_0x55adae(0xd3)]=null,_0x5bbc6f({'success':!![]});break;default:_0x580d4f['QuyJx'](swDebug,_0x580d4f[_0x55adae(_0x4222ae._0x1222ea)],_0x553969['type']),_0x580d4f[_0x55adae(0xcc)](_0x5bbc6f,{'success':![],'error':_0x580d4f['pwCES']});}else this[_0x55adae(0xff)]();}catch(_0x3eade5){console[_0x55adae(0xeb)](_0x580d4f[_0x55adae(_0x4222ae._0x29d05f)],_0x3eade5),_0x5bbc6f({'success':![],'error':_0x3eade5[_0x55adae(0xec)]});}}['onThreadsPageLoaded'](_0xe8d4c7,_0x796c60){const _0xe897b0={_0x428fad:0x104},_0xbc885c={_0x4d9dbf:0xb3},_0x367815=_0x440ee3,_0x189627={'QLGpn':function(_0x118c87,_0x563bbd,_0xcccf40){return _0x118c87(_0x563bbd,_0xcccf40);},'MGJlU':'Threads\x20страница\x20загружена:','ArCid':'page_loaded'};swDebug(_0x189627['MGJlU'],_0x796c60['url']),chrome[_0x367815(0xe7)][_0x367815(0x108)](_0xe8d4c7,{'type':_0x189627['ArCid'],'url':_0x796c60[_0x367815(_0xe897b0._0x428fad)]},_0x1def21=>{const _0x39d8c0=_0x367815;chrome[_0x39d8c0(_0xbc885c._0x4d9dbf)]['lastError']&&_0x189627[_0x39d8c0(0xf0)](swDebug,'Content\x20script\x20не\x20готов:',chrome[_0x39d8c0(0xb3)]['lastError']['message']);});}async[_0x440ee3(0xd4)](_0x231aa3,_0xe66a31){const _0x216924={_0x24573d:0xe1,_0x3b759c:0xf9,_0x417eb6:0xe5,_0x5d6f86:0xbb,_0x564fe6:0xe5,_0x2cc252:0xe9},_0x57fe41=_0x440ee3,_0x106554={'UkQdr':_0x57fe41(0xc3),'ejAnK':function(_0x3acc91,_0x285609){return _0x3acc91-_0x285609;},'tWGXj':function(_0x364745,_0x328379,_0x219554){return _0x364745(_0x328379,_0x219554);}};try{const _0x471122={'timestamp':Date[_0x57fe41(_0x216924._0x24573d)](),'error':_0x231aa3['toString'](),'context':_0xe66a31||'unknown','url':_0xe66a31?.[_0x57fe41(0x104)]||'unknown'},{errorLogs:errorLogs=[]}=await chrome['storage'][_0x57fe41(0xb0)]['get']([_0x106554[_0x57fe41(0xe8)]]);errorLogs[_0x57fe41(_0x216924._0x3b759c)](_0x471122),errorLogs[_0x57fe41(_0x216924._0x417eb6)]>-0x679+-0x3*-0x7db+-0x10b4&&errorLogs['splice'](0x681+0xd4b+-0x13cc,_0x106554[_0x57fe41(_0x216924._0x5d6f86)](errorLogs[_0x57fe41(_0x216924._0x564fe6)],-0x847*0x1+-0xe83+0x172e)),await chrome['storage']['local'][_0x57fe41(0xe6)]({'errorLogs':errorLogs}),_0x106554['tWGXj'](swDebug,'Ошибка\x20залогирована:',_0x471122);}catch(_0x297ebb){console['error'](_0x57fe41(_0x216924._0x2cc252),_0x297ebb);}}}attachSettings(ThreadsAIServiceWorker),attachLimits(ThreadsAIServiceWorker),new ThreadsAIServiceWorker();
+import { DEFAULT_SETTINGS } from '../config.js';
+import { attachSettings } from './background-settings.js';
+import { attachLimits } from './background-limits.js';
+
+const DEBUG_SW = false;
+
+const swDebug = (...args) => {
+    if (DEBUG_SW) console.log(...args);
+};
+
+class ThreadsAIServiceWorker {
+    constructor() {
+        this.isActive = false;
+        this.activeTabId = null;
+        this.init();
+    }
+
+    async setTabAutoDiscardable(tabId, isDiscardable) {
+        if (!tabId) return;
+        try {
+            await chrome.tabs.update(tabId, { autoDiscardable: isDiscardable });
+        } catch (error) {
+            // Игнорируем ошибки при обновлении таба
+        }
+    }
+
+    init() {
+        this.setupEventListeners();
+        swDebug('ThreadsAI Service Worker инициализирован');
+    }
+
+    setupEventListeners() {
+        chrome.runtime.onInstalled.addListener((details) => {
+            swDebug('ThreadsAI расширение установлено:', details.reason);
+            if (details.reason === 'install') {
+                this.onFirstInstall();
+            } else if (details.reason === 'update') {
+                this.onUpdate(details.previousVersion);
+            }
+        });
+
+        chrome.runtime.onStartup.addListener(() => {
+            swDebug('Браузер запущен, ThreadsAI готов к работе');
+        });
+
+        chrome.runtime.onMessage.addListener((message, sender, sendResponse) => {
+            this.handleMessage(message, sender, sendResponse);
+            return true; // Держим канал открытым для асинхронного ответа
+        });
+
+        chrome.tabs.onUpdated.addListener((tabId, changeInfo, tab) => {
+            if (changeInfo.status === 'complete' && tab.url && tab.url.includes('threads.com')) {
+                this.onThreadsPageLoaded(tabId, tab);
+            }
+        });
+
+        chrome.tabs.onActivated.addListener((activeInfo) => {
+            chrome.tabs.get(activeInfo.tabId, (tab) => {
+                if (chrome.runtime.lastError) return;
+                if (tab?.url?.includes('threads.com')) {
+                    this.activeTabId = activeInfo.tabId;
+                }
+            });
+        });
+    }
+
+    async onFirstInstall() {
+        try {
+            await chrome.storage.sync.set({ ...DEFAULT_SETTINGS, firstRun: true });
+            await chrome.storage.local.set({
+                sessionStats: { comments: 0, processed: 0, errors: 0 },
+                totalStats: { comments: 0, processed: 0, errors: 0 },
+                lastRun: null
+            });
+            swDebug('Первичная настройка завершена');
+        } catch (error) {
+            console.error('Ошибка при первой установке:', error);
+        }
+    }
+
+    async onUpdate(previousVersion) {
+        swDebug(`Обновление с версии ${previousVersion} на ${chrome.runtime.getManifest().version}`);
+        try {
+            const settings = await chrome.storage.sync.get();
+            let isUpdated = false;
+            
+            if (!settings.commentStyle) {
+                settings.commentStyle = 'friendly';
+                isUpdated = true;
+            }
+            
+            if (isUpdated) {
+                await chrome.storage.sync.set(settings);
+                swDebug('Настройки обновлены');
+            }
+        } catch (error) {
+            console.error('Ошибка при обновлении:', error);
+        }
+    }
+
+    handleMessage(message, sender, sendResponse) {
+        swDebug('Service Worker получил сообщение:', message.type);
+
+        try {
+            switch (message.type) {
+                case 'get_inline_ai_settings':
+                    this.getInlineAISettings()
+                        .then(settings => sendResponse({ success: true, settings }))
+                        .catch(error => sendResponse({ success: false, error: error.message }));
+                    break;
+
+                case 'get_settings':
+                    this.getSettings()
+                        .then(settings => sendResponse({ success: true, settings }))
+                        .catch(error => sendResponse({ success: false, error: error.message }));
+                    break;
+
+                case 'save_settings':
+                    this.saveSettings(message.settings)
+                        .then(() => sendResponse({ success: true }))
+                        .catch(error => sendResponse({ success: false, error: error.message }));
+                    break;
+
+                case 'activate_app':
+                    this.isActive = true;
+                    this.activeTabId = sender.tab?.id;
+                    if (this.activeTabId) {
+                        this.setTabAutoDiscardable(this.activeTabId, false);
+                    }
+                    sendResponse({ success: true });
+                    break;
+
+                case 'deactivate_app':
+                    this.isActive = false;
+                    const tabIdToDeactivate = sender.tab?.id || this.activeTabId;
+                    if (tabIdToDeactivate) {
+                        this.setTabAutoDiscardable(tabIdToDeactivate, true);
+                    }
+                    this.activeTabId = null;
+                    sendResponse({ success: true });
+                    break;
+
+                case 'log_error':
+                    this.logError(message.error, message.context)
+                        .then(() => sendResponse({ success: true }))
+                        .catch(error => sendResponse({ success: false, error: error.message }));
+                    break;
+
+                case 'ping':
+                    sendResponse({ success: true });
+                    break;
+
+                case 'decrement_free_parsing':
+                    this.decrementFreeParsing({ tg_id: message.tg_id, extension_key: message.extension_key })
+                        .then(result => {
+                            if (result.success) {
+                                sendResponse({ success: true, parsing_left: result.parsing_left, reason: result.reason || 'ok' });
+                            } else if (result.skipped) {
+                                sendResponse({ success: true, parsing_left: -1, reason: 'pro_user' });
+                            } else {
+                                sendResponse({ success: false, error: result.error, parsing_left: result.parsing_left });
+                            }
+                        })
+                        .catch(error => sendResponse({ success: false, error: error.message }));
+                    break;
+
+                // Случаи, которые просто подтверждают прием сообщения без сложной логики в SW
+                case 'typing_progress':
+                case 'comments_left_update':
+                case 'free_limit_reached':
+                case 'auth_invalid':
+                case 'post_processed':
+                case 'post_reply':
+                case 'log_entry':
+                case 'action_update':
+                case 'plan_downgraded':
+                case 'tech_log':
+                    sendResponse({ success: true });
+                    break;
+
+                default:
+                    swDebug('Неизвестный тип сообщения:', message.type);
+                    sendResponse({ success: false, error: 'unknown_message_type' });
+            }
+        } catch (error) {
+            console.error('Ошибка обработки сообщения:', error);
+            sendResponse({ success: false, error: error.message });
+        }
+    }
+
+    onThreadsPageLoaded(tabId, tab) {
+        swDebug('Threads страница загружена:', tab.url);
+        chrome.tabs.sendMessage(tabId, { type: 'page_loaded', url: tab.url }, (response) => {
+            if (chrome.runtime.lastError) {
+                swDebug('Content script не готов:', chrome.runtime.lastError.message);
+            }
+        });
+    }
+
+    async logError(errorMsg, context) {
+        try {
+            const errorEntry = {
+                timestamp: Date.now(),
+                error: errorMsg.toString(),
+                context: context || 'unknown',
+                url: context?.url || 'unknown'
+            };
+
+            const storage = await chrome.storage.local.get(['errorLogs']);
+            let errorLogs = storage.errorLogs || [];
+
+            errorLogs.push(errorEntry);
+            
+            // Ограничиваем лог 100 записями
+            if (errorLogs.length > 100) {
+                errorLogs.splice(0, errorLogs.length - 100);
+            }
+
+            await chrome.storage.local.set({ errorLogs });
+            swDebug('Ошибка залогирована:', errorEntry);
+        } catch (error) {
+            console.error('Ошибка записи лога:', error);
+        }
+    }
+}
+
+// Применяем примеси (mixins) из других файлов
+attachSettings(ThreadsAIServiceWorker);
+attachLimits(ThreadsAIServiceWorker);
+
+// Инициализируем Service Worker
+new ThreadsAIServiceWorker();
