@@ -1,24 +1,50 @@
 {
   "manifest_version": 3,
-  "name": "ThreadsAI Lite",
-  "version": "1.2.0",
-  "description": "Упрощенное расширение для запуска автоответчика в Threads",
-  "permissions": ["activeTab", "storage", "tabs"],
-  "host_permissions": ["https://*.threads.com/*"],
+  "name": "ThreadsAI",
+  "version": "1.1.3",
+  "description": "AI-powered smart commenting tool for Threads with GPT integration",
+  
+  "permissions": [
+    "activeTab",
+    "scripting",
+    "storage",
+    "tabs",
+    "downloads",
+    "declarativeNetRequest"
+  ],
+  
+  "host_permissions": [
+    "https://*.threads.com/*",
+    "https://*.supabase.co/*",
+    "https://*.cdninstagram.com/*",
+    "https://*.fbcdn.net/*"
+  ],
+  
   "background": {
     "service_worker": "src/background/service-worker.js",
     "type": "module"
   },
+  
   "content_scripts": [
     {
-      "matches": ["https://*.threads.com/*"],
-      "js": ["src/content/content-script.js"],
+      "matches": [
+        "https://*.threads.com/*"
+      ],
+      "js": [
+        "src/content/feed-parser.js",
+        "src/content/content-script.js",
+        "src/content/content-settings.js",
+        "src/content/content-inline.js",
+        "src/content/content-parser.js",
+        "src/content/content-bootstrap.js"
+      ],
       "run_at": "document_end"
     }
   ],
+  
   "action": {
     "default_popup": "src/popup/popup.html",
-    "default_title": "ThreadsAI Lite",
+    "default_title": "ThreadsAI",
     "default_icon": {
       "16": "src/icons/icon16.png",
       "32": "src/icons/icon32.png",
@@ -26,10 +52,21 @@
       "128": "src/icons/icon128.png"
     }
   },
+  
   "icons": {
     "16": "src/icons/icon16.png",
     "32": "src/icons/icon32.png",
     "48": "src/icons/icon48.png",
     "128": "src/icons/icon128.png"
+  },
+  
+  "declarative_net_request": {
+    "rule_resources": [
+      {
+        "id": "cdn_headers",
+        "enabled": true,
+        "path": "rules/cdn_headers.json"
+      }
+    ]
   }
 }
